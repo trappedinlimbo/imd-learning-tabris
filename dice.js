@@ -1,12 +1,13 @@
 // This is a simple Tabris.js app. Feel free to modify as you please.
-// Changes are saved immediately and will be available on your device after reload.
 
 const {Button, TextView, ui, ImageView, AlertDialog} = require('tabris');
+
+const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 
 // Create a push button and add it to the content view
 let button = new Button({
   left: 10, top: 10,
-  text: 'Roll the Dice Rob!'
+  text: 'Roll the Dice Rob Casino!'
 }).appendTo(ui.contentView);
 
 let button1 = new Button({
@@ -14,7 +15,7 @@ let button1 = new Button({
   text: 'Change image'
 })
   .on('select', () => {
-    image1.image = 'http://www.iconsplace.com/icons/preview/red/dice-256.png';
+    image1.image = IMAGE_PATH + '1.png';
   })
   .appendTo(ui.contentView);
 
