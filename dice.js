@@ -4,9 +4,14 @@ const {Button, TextView, ui, ImageView, AlertDialog} = require('tabris');
 
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 
+let casinoimage = new ImageView({
+   left: 10, top: 10,
+   image: IMAGE_PATH + 'casino.jpg'
+}).appendTo(ui.contentView);
+
 // Create a push button and add it to the content view
 let button = new Button({
-  left: 10, top: 10,
+  left: 10, top: 'prev() 10',
   text: 'Roll the Dice Rob Casino!'
 }).appendTo(ui.contentView);
 
