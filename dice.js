@@ -21,7 +21,6 @@ let userText = new TextInput({
   top: 20, left: '20%', right: '20%',
   message: 'Your name: '
 }).on('accept', ({text}) => {
-  casinoimage.height = 1;
   new TextView({
     top: 'prev() 20', left: '20%',
     text: text
@@ -40,6 +39,7 @@ let button = new Button({
     text: 'Roll Dice'
   })
   .on('select', () => {
+    casinoimage.height = 1;
     var rand = 1 + Math.floor(Math.random() * 6);
 
     image1.image = IMAGE_PATH + rand + '.png';
@@ -96,6 +96,7 @@ let winnerimage = new ImageView({
     text: 'Reset'
   })
   .on('select', () => {
+      casinoimage.height = 109;
       label.text = 'New Game';
       winnerimage.image = '';
       numWins = 0;
