@@ -39,7 +39,7 @@ let button = new Button({
 
     if (numWins == 5){
       label.text = 'You WON with 5 wins!';
-          image1.image = 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423';
+      image1.image = IMAGE_PATH + 'whitedice.png';
       winnerimage.image = '';
       numWins = 0;
     }
@@ -62,7 +62,7 @@ let image1 = new ImageView({
   height: 100,
   centerX: 0,
   scaleMode: 'fill',
-  image: 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423',
+  image: IMAGE_PATH + 'whitedice.png'
 
 }).appendTo(ui.contentView);
 
@@ -76,6 +76,8 @@ let winnerimage = new ImageView({
   scaleMode: 'fill',
   }).appendTo(ui.contentView);
 
+
+
   let resetbutton = new Button({
     centerX: 0,
     top: 'prev() 10',
@@ -83,7 +85,7 @@ let winnerimage = new ImageView({
   })
   .on('select', () => {
 
-    image1.image = 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423';
+    image1.image = IMAGE_PATH + 'whitedice.png';
       label.text = 'New Game';
       winnerimage.image = '';
       numWins = 0;
