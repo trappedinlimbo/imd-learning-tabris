@@ -1,34 +1,56 @@
 // This is a simple Tabris.js app. Feel free to modify as you please.
 
-const {Button, TextView, ui, ImageView, AlertDialog} = require('tabris');
+const {
+  Button,
+  TextView,
+  ui,
+  ImageView,
+  AlertDialog
+} = require('tabris');
 
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 
 let casinoimage = new ImageView({
-   top: 10, centerX: 0,
-   image: IMAGE_PATH + 'casino.jpg'
+  top: 10,
+  centerX: 0,
+  image: IMAGE_PATH + 'casino.jpg'
 }).appendTo(ui.contentView);
 
 let button = new Button({
-  centerX: 0, top: 'prev() 10',
-  text: 'Roll Dice'
-})
+    centerX: 0,
+    top: 'prev() 10',
+    text: 'Roll Dice'
+  })
   .on('select', () => {
-   var rand = 1 + Math.floor(Math.random() * 6);
-   image1.image = 'https://mrmccormack.github.io/imd-learning-tabris/images/' + rand + '.png'
-   }).appendTo(ui.contentView);
+    var rand = 1 + Math.floor(Math.random() * 6);
+    image1.image = 'https://mrmccormack.github.io/imd-learning-tabris/images/' + rand + '.png';
+
+    if (rand == 6) {
+      label.text = 'WINNER, you got a 6'
+    } else {
+      label.text = 'Try again'
+    }
+
+
+  }).appendTo(ui.contentView);
 
 
 // Create a text view and add it too
 let label = new TextView({
-  left: 10, top: 'prev() 10',
-  font: '24px'
+  centerX: 0,
+  top: 'prev() 10',
+  font: '14px',
+  text: 'Welcome to Mr. M. Casino'
 }).appendTo(ui.contentView);
 
 // Display images with different scale modes
 
 
 let image1 = new ImageView({
-    top: 'prev() 10', width: 100, height: 100, centerX: 0, scaleMode: 'fill',
-   image: 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423',
+  top: 'prev() 10',
+  width: 100,
+  height: 100,
+  centerX: 0,
+  scaleMode: 'fill',
+  image: 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423',
 }).appendTo(ui.contentView);
