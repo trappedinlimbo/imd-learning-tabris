@@ -23,6 +23,7 @@ let button = new Button({
   })
   .on('select', () => {
     var rand = 1 + Math.floor(Math.random() * 6);
+
     image1.image = 'https://mrmccormack.github.io/imd-learning-tabris/images/' + rand + '.png';
 
     if (rand == 6) {
@@ -55,7 +56,10 @@ let image1 = new ImageView({
   centerX: 0,
   scaleMode: 'fill',
   image: 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423',
+
 }).appendTo(ui.contentView);
+
+
 
 let winnerimage = new ImageView({
   top: 'prev() 10',
@@ -63,4 +67,17 @@ let winnerimage = new ImageView({
   height: 100,
   centerX: 0,
   scaleMode: 'fill',
+  }).appendTo(ui.contentView);
+
+  let resetbutton = new Button({
+    centerX: 0,
+    top: 'prev() 10',
+    text: 'Reset'
+  })
+  .on('select', () => {
+
+    image1.image = 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423';
+      label.text = 'New Game';
+      winnerimage.image = '';
+
   }).appendTo(ui.contentView);
