@@ -6,16 +6,31 @@ const {
   ui,
   ImageView,
   AlertDialog,
-  app
+  app, TextInput
 } = require('tabris');
 
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 const MY_TABRIS_PLAYGROUND_URL = 'https://tabrisjs.com/mrmccormack/playground/';
 
+// global variables
 let numWins = 0;
+let username = ''
+
+
+// Create a text input field with input finished listener
+
+new TextInput({
+  top: 20, left: '20%', right: '20%',
+  message: 'Your name: '
+}).on('accept', ({text}) => {
+  new TextView({
+    top: 'prev() 20', left: '20%',
+    text: text
+  }).appendTo(ui.contentView);
+}).appendTo(ui.contentView);
 
 let casinoimage = new ImageView({
-  top: 10,
+  top: 'prev() 10',
   centerX: 0,
   image: IMAGE_PATH + 'casino.jpg'
 }).appendTo(ui.contentView);
