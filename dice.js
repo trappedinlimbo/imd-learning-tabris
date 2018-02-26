@@ -14,8 +14,6 @@ const MY_TABRIS_PLAYGROUND_URL = 'https://tabrisjs.com/mrmccormack/playground/';
 
 // global variables
 let numWins = 0;
-let username = ''
-
 
 // Create a text input field with input finished listener
 
@@ -23,11 +21,11 @@ let userText = new TextInput({
   top: 20, left: '20%', right: '20%',
   message: 'Your name: '
 }).on('accept', ({text}) => {
+  casinoimage.height = 1;
   new TextView({
     top: 'prev() 20', left: '20%',
     text: text
   }).appendTo(ui.contentView);
-  username = TextInput.text;
 }).appendTo(ui.contentView);
 
 let casinoimage = new ImageView({
