@@ -27,7 +27,7 @@ new TextInput({
     top: 'prev() 20', left: '20%',
     text: text
   }).appendTo(ui.contentView);
-
+  username = TextInput.text;
 }).appendTo(ui.contentView);
 
 let casinoimage = new ImageView({
@@ -51,7 +51,7 @@ let button = new Button({
       numWins = numWins + 1 ;
       winnerimage.image = IMAGE_PATH + 'winner.jpg';
     } else {
-      label.text = 'Try again- Wins so far ' + numWins;
+      label.text = username + ' - Try again- Wins so far ' + numWins;
       winnerimage.image = '';
     }
 
