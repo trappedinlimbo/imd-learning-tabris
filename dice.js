@@ -26,9 +26,11 @@ let button = new Button({
     image1.image = 'https://mrmccormack.github.io/imd-learning-tabris/images/' + rand + '.png';
 
     if (rand == 6) {
-      label.text = 'WINNER, you got a 6'
+      label.text = 'WINNER, you got a 6';
+      winnerimage.image = IMAGE_PATH + 'winner.jpg';
     } else {
-      label.text = 'Try again'
+      label.text = 'Try again';
+      winnerimage.image = '';
     }
 
 
@@ -54,3 +56,11 @@ let image1 = new ImageView({
   scaleMode: 'fill',
   image: 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423',
 }).appendTo(ui.contentView);
+
+let winnerimage = new ImageView({
+  top: 'prev() 10',
+  width: 100,
+  height: 100,
+  centerX: 0,
+  scaleMode: 'fill',
+  }).appendTo(ui.contentView);
