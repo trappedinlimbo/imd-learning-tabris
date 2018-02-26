@@ -5,10 +5,12 @@ const {
   TextView,
   ui,
   ImageView,
-  AlertDialog
+  AlertDialog,
+  app
 } = require('tabris');
 
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
+const MY_TABRIS_PLAYGROUND_URL = 'https://tabrisjs.com/mrmccormack/playground/';
 
 let numWins = 0;
 
@@ -85,9 +87,22 @@ let winnerimage = new ImageView({
   })
   .on('select', () => {
 
-    image1.image = IMAGE_PATH + 'whitedice.png';
       label.text = 'New Game';
       winnerimage.image = '';
       numWins = 0;
+      image1.image = 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png';
 
   }).appendTo(ui.contentView);
+
+
+
+  new Button({
+  alignment: 'center', centerX: 0,  top: 'prev() 10',
+  image: IMAGE_PATH + 'github32.png',
+    font: '10px',
+  text: ' Edit on Tabris.js playground'
+}).on({
+  select: () => app.launch(MY_TABRIS_PLAYGROUND_URL)
+    .then(() => label.text = 'Url has been launched')
+    .catch((e) => label.text = e)
+}).appendTo(ui.contentView);
