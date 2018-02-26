@@ -10,6 +10,8 @@ const {
 
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 
+let numWins = 0;
+
 let casinoimage = new ImageView({
   top: 10,
   centerX: 0,
@@ -24,19 +26,25 @@ let button = new Button({
   .on('select', () => {
     var rand = 1 + Math.floor(Math.random() * 6);
 
-    image1.image = 'https://mrmccormack.github.io/imd-learning-tabris/images/' + rand + '.png';
+    image1.image = IMAGE_PATH + rand + '.png';
 
     if (rand == 6) {
       label.text = 'WINNER, you got a 6';
+      numWins = numWins + 1 ;
       winnerimage.image = IMAGE_PATH + 'winner.jpg';
     } else {
-      label.text = 'Try again';
+      label.text = 'Try again- Wins so far ' + numWins;
       winnerimage.image = '';
     }
 
+    if (numWins == 5){
+      label.text = 'You WON with 5 wins!';
+          image1.image = 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423';
+      winnerimage.image = '';
+      numWins = 0;
+    }
 
   }).appendTo(ui.contentView);
-
 
 // Create a text view and add it too
 let label = new TextView({
@@ -47,7 +55,6 @@ let label = new TextView({
 }).appendTo(ui.contentView);
 
 // Display images with different scale modes
-
 
 let image1 = new ImageView({
   top: 'prev() 10',
@@ -79,5 +86,6 @@ let winnerimage = new ImageView({
     image1.image = 'https://vignette.wikia.nocookie.net/game-of-dice/images/c/cb/White_Dice.png/revision/latest?cb=20160113233423';
       label.text = 'New Game';
       winnerimage.image = '';
+      numWins = 0;
 
   }).appendTo(ui.contentView);
