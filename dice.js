@@ -1,4 +1,4 @@
-// This is a simple Tabris.js app. Feel free to modify as you please.
+// This is a simple Tabris.js app. by MR. M. -  Feel free to modify as you please.
 
 const {
   Button,
@@ -19,7 +19,7 @@ let username = ''
 
 // Create a text input field with input finished listener
 
-new TextInput({
+let userText = new TextInput({
   top: 20, left: '20%', right: '20%',
   message: 'Your name: '
 }).on('accept', ({text}) => {
@@ -47,11 +47,11 @@ let button = new Button({
     image1.image = IMAGE_PATH + rand + '.png';
 
     if (rand == 6) {
-      label.text = username + '- WINNER, you got a 6';
+      label.text = userText.text + '- WINNER, you got a 6';
       numWins = numWins + 1 ;
       winnerimage.image = IMAGE_PATH + 'winner.jpg';
     } else {
-      label.text = username + ' - Try again- Wins so far ' + numWins;
+      label.text = userText.text  + ' - Try again- Wins so far ' + numWins;
       winnerimage.image = '';
     }
 
