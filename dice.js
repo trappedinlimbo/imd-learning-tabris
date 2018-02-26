@@ -68,8 +68,6 @@ let image1 = new ImageView({
 
 }).appendTo(ui.contentView);
 
-
-
 let winnerimage = new ImageView({
   top: 'prev() 10',
   width: 100,
@@ -78,15 +76,12 @@ let winnerimage = new ImageView({
   scaleMode: 'fill',
   }).appendTo(ui.contentView);
 
-
-
   let resetbutton = new Button({
     centerX: 0,
     top: 'prev() 10',
     text: 'Reset'
   })
   .on('select', () => {
-
       label.text = 'New Game';
       winnerimage.image = '';
       numWins = 0;
@@ -96,10 +91,22 @@ let winnerimage = new ImageView({
 
 
 
+new Button({
+  left: 16, top: 'prev() 16', right: 16,
+  text: '© INFO'
+}).on('select', () => {
+  new AlertDialog({
+      font: '10px',
+    message: '© 2018 Mr. M. - Free to use',
+    buttons: {ok: 'OK'}
+  }).open();
+}).appendTo(ui.contentView);
+
+
   new Button({
   alignment: 'center', centerX: 0,  top: 'prev() 10',
   image: IMAGE_PATH + 'github32.png',
-    font: '10px',
+  font: '10px',
   text: ' Edit on Tabris.js playground'
 }).on({
   select: () => app.launch(MY_TABRIS_PLAYGROUND_URL)
