@@ -9,7 +9,7 @@ const {
   app, TextInput
 } = require('tabris');
 
-const IMAGE_PATH = 'https://trappedinlimbo.github.io/imd-learning-tabris/images/';
+const IMAGE_PATH = 'https://github.com/trappedinlimbo/imd-learning-tabris/tree/master/images';
 const MY_GITHUB_REPO = 'https://github.com/trappedinlimbo/imd-learning-tabris'
 
 // global variables
