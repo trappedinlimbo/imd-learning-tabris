@@ -9,8 +9,8 @@ const {
   app, TextInput
 } = require('tabris');
 
-const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
-const MY_GITHUB_REPO = 'https://github.com/mrmccormack/imd-learning-tabris'
+const IMAGE_PATH = 'https://trappedinlimbo.github.io/imd-learning-tabris/images/';
+const MY_GITHUB_REPO = 'https://github.com/trappedinlimbo/imd-learning-tabris'
 
 // global variables
 let numWins = 0;
@@ -30,7 +30,7 @@ let userText = new TextInput({
 let casinoimage = new ImageView({
   top: 'prev() 10',
   centerX: 0,
-  image: IMAGE_PATH + 'casino.jpg'
+  image: IMAGE_PATH + 'casinoo.png'
 }).appendTo(ui.contentView);
 
 let button = new Button({
