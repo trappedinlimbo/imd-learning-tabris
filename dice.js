@@ -47,7 +47,7 @@ let button = new Button({
     if (rand == 6) {
       label.text = userText.text + '- WINNER, you got a 6';
       numWins = numWins + 1 ;
-      winnerimage.image = IMAGE_PATH + 'winner.jpg';
+      winnerimage.image = IMAGE_PATH + 'winner.png';
     } else {
       label.text = userText.text  + ' - Try again- Wins so far ' + numWins;
       winnerimage.image = '';
