@@ -67,7 +67,7 @@ let label = new TextView({
   centerX: 0,
   top: 'prev() 10',
   font: '14px',
-  text: 'Welcome to Mr. M. Casino'
+  text: 'Welcome to the Brandon Casino'
 }).appendTo(ui.contentView);
 
 // Display images with different scale modes
@@ -111,7 +111,7 @@ new Button({
   text: '© INFO'
 }).on('select', () => {
   new AlertDialog({
-    message: '© 2018 Mr. M. - Free to use',
+    message: '© 2018 Brandon Dowhaniuk. - Free to use',
     buttons: {ok: 'OK'}
   }).open();
 }).appendTo(ui.contentView);
