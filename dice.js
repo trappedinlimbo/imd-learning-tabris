@@ -10,7 +10,7 @@ const {
 } = require('tabris');
 
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
-const MY_TABRIS_PLAYGROUND_URL = 'https://tabrisjs.com/mrmccormack/playground/';
+const MY_GITHUB_REPO = 'https://github.com/mrmccormack/imd-learning-tabris'
 
 // global variables
 let numWins = 0;
@@ -111,7 +111,6 @@ new Button({
   text: '© INFO'
 }).on('select', () => {
   new AlertDialog({
-      font: '10px',
     message: '© 2018 Mr. M. - Free to use',
     buttons: {ok: 'OK'}
   }).open();
@@ -122,9 +121,9 @@ new Button({
   alignment: 'center', centerX: 0,  top: 'prev() 10',
   image: IMAGE_PATH + 'github32.png',
   font: '10px',
-  text: ' Edit on Tabris.js playground'
+  text: 'View source code on my Github Repository'
 }).on({
-  select: () => app.launch(MY_TABRIS_PLAYGROUND_URL)
+  select: () => app.launch(MY_GITHUB_REPO)
     .then(() => label.text = 'Url has been launched')
     .catch((e) => label.text = e)
 }).appendTo(ui.contentView);
